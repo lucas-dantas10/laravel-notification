@@ -2,14 +2,15 @@
     <li class="nav-item dropdown">
         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Notificações <span class="caret"></span>
+            Notificações ({{notifications.length}})<span class="caret"></span>
         </a>
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#" v-for="notification in notifications" :key="notification.id">
-                {{ notification.data.comment.title }}
-                
-            </a>
+            <notification 
+                v-for="notification in notifications" 
+                :key="notification.id"
+                :notification="notification.data.comment">            
+            </notification>
 
             <a class="dropdown-item" href="#">
                 Limpar Notificações
@@ -20,29 +21,14 @@
 </template>
 
 <script>
-import Axios from 'axios';
-
     export default {
         created () {
-            this.loadNotifications();
+            this.$store.dispatch('loadNotifications');
         },
 
         computed: {
             notifications() {
-                return this.notificationsItems
-            }
-        },
-
-        data() {
-            return {
-                notificationsItems: []
-            }
-        },
-
-        methods: {
-            loadNotifications () {
-                axios.get('/notifications')
-                        .then(response => this.notificationsItems = response.data)
+                return this.$store.state.notifications.items;
             }
         },
     }
