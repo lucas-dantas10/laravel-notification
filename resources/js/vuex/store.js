@@ -1,34 +1,12 @@
 import Vue from 'vue'
-import {createStore} from 'vuex'
-import Axios from 'axios'
+import Vuex from 'vuex'
 
-Vue.use(createStore)
+import notifications from './modules/notifications'
 
-export default createStore({
-    state: {
-        items: []
-    },
+Vue.use(Vuex)
 
-    mutations: {
-        LOAD_NOTIFICATION(state, notifications) {
-            state.items = notifications
-        }
-    },
-
-    actions: {
-        loadNotifications(context) {
-            Axios.get('/notifications')
-                    .then(response => {
-                        context.commit('LOAD_NOTIFICATION', response.data)
-                    })
-        },
+export default new Vuex.Store({
+    modules: {
+        notifications,
     }
 })
-
-
-
-
-
-
-
-
