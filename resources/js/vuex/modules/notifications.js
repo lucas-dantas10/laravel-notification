@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import Axios from "axios"
 
 export default {
     state: {
@@ -15,7 +15,7 @@ export default {
         loadNotifications(context) {
             Axios.get('/notifications')
                 .then(response => {
-                    context.commit('LOAD_NOTIFICATION', response.data)
+                    context.commit(this.LOAD_NOTIFICATION, response.data)
                 })
         },
     }

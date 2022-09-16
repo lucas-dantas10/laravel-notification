@@ -23,13 +23,24 @@
 <script>
     export default {
         created () {
-            this.$store.dispatch('loadNotifications');
+            useStore.dispatch('loadNotifications');
         },
 
         computed: {
             notifications() {
-                return this.$store.state.notifications.items;
+                return useStore.state.notifications.items;
             }
         },
+
+        data() {
+
+        },
+
+        methods: {
+            loadNotifications() {
+                Axios.get('/notifications')
+                        .then(response => response)
+            },
+        }
     }
 </script>
