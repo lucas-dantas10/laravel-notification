@@ -15,8 +15,12 @@ export default {
         loadNotifications(context) {
             Axios.get('/notifications')
                 .then(response => {
-                    context.commit(this.LOAD_NOTIFICATION, response.data)
+                    context.commit('LOAD_NOTIFICATION', response.data)
                 })
         },
+
+        markAsRead(context, params) {
+            Axios.put('/notification-read', params);
+        }
     }
 }
