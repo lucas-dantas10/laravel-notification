@@ -1,5 +1,7 @@
 <?php
 
+$this->put('notification-read', 'NotificationController@markAsRead')->name('notification.read');
+
 $this->get('notifications', 'NotificationController@notifications')->name('notifications');
 
 $this->post('comment', 'Posts\CommentController@store')->name('comment.store');
