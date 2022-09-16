@@ -18,4 +18,16 @@ class NotificationController extends Controller
 
         return response()->json($notifications);
     }
+
+    public function markAsRead(Request $request)
+    {
+        $notification = $request->user()
+                                    ->notifications()
+                                    ->where('id', $request->id)
+                                    ->first();
+
+        if ($notification) {
+            $notification->markAsRead();
+        }
+    }
 }

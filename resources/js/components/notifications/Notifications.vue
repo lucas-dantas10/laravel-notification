@@ -9,7 +9,7 @@
             <notification 
                 v-for="notification in notifications" 
                 :key="notification.id"
-                :notification="notification.data.comment">            
+                :notification="notification">            
             </notification>
 
             <a class="dropdown-item" href="#">
@@ -23,24 +23,14 @@
 <script>
     export default {
         created () {
-            useStore.dispatch('loadNotifications');
+            console.log(this.$store)
+            this.$store.dispatch('loadNotifications');
         },
 
         computed: {
             notifications() {
-                return useStore.state.notifications.items;
+                return this.$store.state.notifications.items;
             }
         },
-
-        data() {
-
-        },
-
-        methods: {
-            loadNotifications() {
-                Axios.get('/notifications')
-                        .then(response => response)
-            },
-        }
     }
 </script>
