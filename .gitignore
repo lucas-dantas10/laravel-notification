@@ -13,3 +13,5 @@ database
 package-lock.json
 package.json
 .gitignore
+composer.json
+composer.lock

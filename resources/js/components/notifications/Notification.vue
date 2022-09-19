@@ -1,6 +1,5 @@
 <template>
-    <div>
-        
+    <div>        
         <a class="dropdown-item" href="#">
             <span @click.prevent="markAsRead(notification.id)">Lida</span>           
             {{comment.user.name}} - {{ comment.title }}

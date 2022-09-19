@@ -10,7 +10,7 @@
     </a>
     <hr>
 @empty
-<p>Nenhum Post Cadastrado</p>
+    <p>Nenhum Post Cadastrado</p>
     
 @endforelse
 

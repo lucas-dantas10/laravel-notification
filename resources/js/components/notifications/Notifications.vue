@@ -12,7 +12,7 @@
                 :notification="notification">            
             </notification>
 
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="#" @click.prevent="markAllAsRead">
                 Limpar Notificações
             </a>
             
@@ -23,7 +23,7 @@
 <script>
     export default {
         created () {
-            console.log(this.$store)
+            console.log(this.$store);
             this.$store.dispatch('loadNotifications');
         },
 
@@ -32,5 +32,11 @@
                 return this.$store.state.notifications.items;
             }
         },
+
+        methods: {
+            markAllAsRead() {
+                this.$store.dispatch('markAllAsRead');
+            }
+        }
     }
 </script>
