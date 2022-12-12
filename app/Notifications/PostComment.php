@@ -6,7 +6,6 @@ use App\Models\Comment;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\BroadcastMessage;
 use Illuminate\Notifications\Messages\MailMessage;
 
 class PostComment extends Notification implements ShouldQueue
@@ -44,7 +43,7 @@ class PostComment extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
+        return (new MailMessage())
                     ->subject("Novo comentário: {$this->comment->title}")
                     ->line("{$this->comment->body}")
                     ->action('Ver Comentário', route('posts.show', $this->comment->post_id))
