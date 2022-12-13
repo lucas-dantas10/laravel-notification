@@ -26,9 +26,9 @@ class NotificationController extends Controller
                                     ->where('id', $request->id)
                                     ->first();
 
-        if ($notification) {
+        if ($notification) 
             $notification->markAsRead();
-        }
+        
     }
 
     public function markAllAsRead(Request $request)
