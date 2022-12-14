@@ -12,6 +12,8 @@ $this->post('comment', 'Posts\CommentController@store')->name('comment.store');
 
 Route::resource('posts', 'Posts\PostController');
 
+Route::get('posts/delete/{id}', 'Posts\PostController@delete')->name('posts.delete');
+
 Route::get('/', function () {
     return view('welcome');
 });
