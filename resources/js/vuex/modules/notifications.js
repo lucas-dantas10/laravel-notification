@@ -38,12 +38,12 @@ export default {
         },
 
         markAsRead (context, params) {
-            console.log(context);
+            // console.log(context);
             Axios.put('/notification-read', params).then(() => context.commit('MARK_AS_READ', params))
         },
 
         markAllAsRead (context) {
-            console.log(context);
+            // console.log(context);
             Axios.put('/notification-all-read')
                     .then(() => context.commit('MARK_ALL_AS_READ'));
         }

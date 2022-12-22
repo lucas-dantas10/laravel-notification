@@ -23,12 +23,13 @@
 <script>
     export default {
         created () {
-            console.log(this.$store);
+            // console.log(this.$store);
             this.$store.dispatch('loadNotifications');
         },
 
         computed: {
             notifications() {
+                console.log(this.$store.state.notifications.items);
                 return this.$store.state.notifications.items;
             }
         },
