@@ -9,9 +9,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-database
-package-lock.json
-package.json
 .gitignore
-composer.json
-composer.lock
