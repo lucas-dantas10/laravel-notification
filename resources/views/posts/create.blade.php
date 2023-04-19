@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1 class="mb-4">Criar Post</h1>
+<h1 class="mb-4 title">Criar Post</h1>
 <form action="{{route('posts.store')}}" class="form" method="POST">
     @csrf
     <input type="hidden" name="post_id">

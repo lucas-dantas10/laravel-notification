@@ -1,0 +1,44 @@
+@import '../variables';
+
+body {
+    background-color: $black;
+}
+
+.card-swal {
+    background-color: $primary;
+}
+
+.navbar {
+    background-color: $primary !important;
+    font-weight: 700;
+}
+
+.title {
+    color: $white !important;
+}
+
+.btn-primary {
+    background-color: $primary !important;
+    border-color: $primary;
+    color: $black;
+    transition: all .2s ease-in;
+}
+
+.btn-primary:hover {
+    background-color: #523f7f !important;
+    border-color: #523f7f !important;
+    color: $white;
+}
+
+.posted {
+    border: 1px solid $primary;
+    border-radius: 10px;
+    background-color: $primary;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.link-comment {
+    text-decoration: none !important;
+    color: $black;
+}

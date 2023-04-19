@@ -17,7 +17,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = $this->post->with('comments')->paginate(7);
+        $posts = $this->post->with('comments')->paginate(4);
 
         return view('posts.index', [
             'posts' => $posts

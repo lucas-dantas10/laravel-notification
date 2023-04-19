@@ -5,8 +5,8 @@
 <form method="POST" action="{{ route('posts.update', $post->id) }}">
     @method('put')
     @csrf
-    <h1>{{$post->title}}</h1>
-    <div class="mb-4">
+    <h1 class=title>{{$post->title}}</h1>
+    <div class="title mb-4">
         {{$post->body}}
     </div>  
 

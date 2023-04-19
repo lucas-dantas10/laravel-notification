@@ -17,7 +17,8 @@ if (Laravel.user) {
                         swal({
                             title: "Novo comentário",
                             text: `O post ${comment.post.title} foi comentado por ${comment.user.name}`,
-                            icon: 'info'
+                            icon: 'info',
+                            className: 'card-swal'
                         })
 
                         store.commit('ADD_NOTIFICATION', notification);

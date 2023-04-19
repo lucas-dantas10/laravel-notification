@@ -33,14 +33,14 @@
     </div>
 </form>
 @else 
-    <p>Precisa estar logado para fazer os comentários. <a href="{{route('login')}}">Clique aqui para logar</a></p>
+    <p class="title">Precisa estar logado para fazer os comentários. <a href="{{route('login')}}">Clique aqui para logar</a></p>
 @endif
 
 <hr>
 
-<h3>Comentários ({{ $post->comments->count() }})</h3>
+<h3 class="title">Comentários ({{ $post->comments->count() }})</h3>
 @foreach ($post->comments as $comment)
-    <b>{{ $comment->user->name }} comentou: </b>
-    {{ $comment->title }} - {{$comment->body}} <br>
+    <b class="title">{{ $comment->user->name }} comentou: </b>
+    <span class="title">{{ $comment->title }} - {{$comment->body}}</span>
     <hr>
 @endforeach

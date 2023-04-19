@@ -2,8 +2,8 @@
 
 @section('content')
     
-<h1>Detalhes do {{$post->title}}</h1>
-<div>
+<h1 class="title">Detalhes do {{$post->title}}</h1>
+<div class="title">
     {{$post->body}}
 </div>
 
